@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: simple-express
-        image: simple-express
+        image: fr77/simple-express
         ports:
         - containerPort: 80
 
