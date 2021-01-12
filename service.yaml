@@ -1,14 +1,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-app-2-svc
   labels:
-    run: my-app-2-svc
+    app: my-app-2
+  name: my-app-2-svc
+  namespace: default
+  selfLink: /api/v1/namespaces/default/services/my-app-2-svc
 spec:
   ports:
   - port: 8080
     protocol: TCP
+    targetPort: 8080
   selector:
-    run: my-app-2
-
-    
+    app: my-app-2
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
